@@ -1,0 +1,21 @@
+# Build output
+bin/
+obj/
+publish/
+publish-klein/
+
+# Visual Studio / VS Code / Rider
+.vs/
+.idea/
+*.user
+*.suo
+*.userprefs
+
+# OS clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and temp files
+*.log
+*.tmp

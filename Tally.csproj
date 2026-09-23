@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Tally</RootNamespace>
+    <AssemblyName>Tally</AssemblyName>
+    <Product>Tally</Product>
+    <AssemblyTitle>Tally</AssemblyTitle>
+    <Version>1.0.0</Version>
+    <NeutralLanguage>de-DE</NeutralLanguage>
+    <!-- also allows building on Mac/Linux (the program itself only runs on Windows, though) -->
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <SatelliteResourceLanguages>de</SatelliteResourceLanguages>
+    <!-- .exe icon (Explorer, taskbar) and Windows manifest (no admin rights, sharp on every monitor) -->
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!-- "dotnet publish" output folders should never be built as source -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);publish/**;publish-klein/**</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <!-- When publishing with a runtime identifier (-r win-x64): pack everything into ONE .exe -->
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' != ''">
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <!-- The WindowsDesktop SDK (UseWPF) does NOT include System.IO in the implicit usings
+       (unlike the plain SDK) - add it back here, so File/Directory/Path etc. work in the
+       Services without their own "using System.IO;". -->
+  <ItemGroup>
+    <Using Include="System.IO" />
+  </ItemGroup>
+
+</Project>

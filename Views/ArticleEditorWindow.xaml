@@ -1,0 +1,168 @@
+<Window x:Class="Tally.Views.ArticleEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:v="clr-namespace:Tally.Views"
+        Title="{DynamicResource S_ArticleEditorTitle}"
+        Style="{StaticResource AppWindow}"
+        Width="780" Height="760" MinWidth="620" MinHeight="540"
+        ShowInTaskbar="False" WindowStartupLocation="CenterOwner"
+        KeyDown="Window_KeyDown">
+
+    <Grid Margin="26,22,26,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>   <!-- 0 title -->
+            <RowDefinition Height="Auto"/>   <!-- 1 categories heading -->
+            <RowDefinition Height="Auto"/>   <!-- 2 category chips -->
+            <RowDefinition Height="Auto"/>   <!-- 3 new category -->
+            <RowDefinition Height="Auto"/>   <!-- 4 articles heading -->
+            <RowDefinition Height="Auto"/>   <!-- 5 search -->
+            <RowDefinition Height="Auto"/>   <!-- 6 new article -->
+            <RowDefinition Height="*"/>      <!-- 7 article list -->
+            <RowDefinition Height="Auto"/>   <!-- 8 footer -->
+        </Grid.RowDefinitions>
+
+        <!-- ============================================================ Title -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,20">
+            <TextBlock Text="{DynamicResource S_ArticleEditorTitle}" FontSize="18" FontWeight="Bold"/>
+            <TextBlock Margin="0,5,0,0" TextWrapping="Wrap" Foreground="{DynamicResource DimBrush}"
+                       Text="{DynamicResource S_ArticleEditorSubtitle}"/>
+        </StackPanel>
+
+        <!-- ============================================================ Categories -->
+        <TextBlock Grid.Row="1" Text="{DynamicResource S_Categories}" Style="{StaticResource FieldLabel}" Margin="0,0,0,8"/>
+
+        <ItemsControl Grid.Row="2" ItemsSource="{Binding Categories}" Margin="0,0,0,4">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="0,0,8,8" Padding="13,2,3,2" CornerRadius="15" BorderThickness="1"
+                            Background="{DynamicResource Surface2Brush}"
+                            BorderBrush="{DynamicResource LineBrush}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Name}" VerticalAlignment="Center" Margin="0,0,4,0"/>
+                            <Button Style="{StaticResource DangerGhostButton}" Content="✕"
+                                    ToolTip="{DynamicResource S_DeleteCategoryTooltip}"
+                                    Command="{Binding DataContext.DeleteCategoryCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                    CommandParameter="{Binding}"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <Grid Grid.Row="3" Margin="0,0,0,22">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="NewCategoryBox" v:Ui.Placeholder="{DynamicResource S_NewCategoryPlaceholder}"
+                     Text="{Binding NewCategoryName, UpdateSourceTrigger=PropertyChanged}">
+                <TextBox.InputBindings>
+                    <KeyBinding Key="Return" Command="{Binding AddCategoryCommand}"/>
+                </TextBox.InputBindings>
+            </TextBox>
+            <Button Grid.Column="1" Margin="8,0,0,0" Content="{DynamicResource S_AddCategory}"
+                    Command="{Binding AddCategoryCommand}"/>
+        </Grid>
+
+        <!-- ============================================================ Articles -->
+        <Grid Grid.Row="4" Margin="0,0,0,8">
+            <TextBlock Text="{DynamicResource S_Articles}" Style="{StaticResource FieldLabel}" Margin="0" VerticalAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="12"
+                       Foreground="{DynamicResource DimBrush}" Text="{Binding ArticleCountText}"/>
+        </Grid>
+
+        <TextBox Grid.Row="5" x:Name="SearchBox" Margin="0,0,0,8" v:Ui.Placeholder="{DynamicResource S_SearchArticlesPlaceholder}"
+                 Text="{Binding ArticleSearch, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Grid Grid.Row="6" Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="210"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="NewArticleBox" v:Ui.Placeholder="{DynamicResource S_NewArticlePlaceholder}"
+                     Text="{Binding NewArticleName, UpdateSourceTrigger=PropertyChanged}">
+                <TextBox.InputBindings>
+                    <KeyBinding Key="Return" Command="{Binding AddArticleCommand}"/>
+                </TextBox.InputBindings>
+            </TextBox>
+            <ComboBox Grid.Column="1" Margin="8,0,0,0"
+                      ItemsSource="{Binding Categories}"
+                      DisplayMemberPath="Name" SelectedValuePath="Name"
+                      SelectedValue="{Binding NewArticleCategory}"/>
+            <Button Grid.Column="2" Margin="8,0,0,0" Style="{StaticResource PrimaryButton}"
+                    Content="{DynamicResource S_AddButton}" Command="{Binding AddArticleCommand}"/>
+        </Grid>
+
+        <!-- List (virtualized – stays smooth even with several hundred articles) -->
+        <Border Grid.Row="7" CornerRadius="8" BorderThickness="1"
+                BorderBrush="{DynamicResource LineBrush}" Background="{DynamicResource SurfaceBrush}">
+            <Grid>
+                <ListBox x:Name="ArticleList" Style="{StaticResource PlainListBox}"
+                         ItemContainerStyle="{StaticResource PlainListBoxItem}"
+                         ItemsSource="{Binding FilteredArticles}"
+                         Padding="8,8,4,2"
+                         VirtualizingPanel.IsVirtualizing="True"
+                         VirtualizingPanel.ScrollUnit="Pixel">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0,0,0,6">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="210"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Name: applied when the field loses focus / with Enter, empty = reset -->
+                                <TextBox Text="{Binding Name, Mode=OneWay}"
+                                         LostKeyboardFocus="ArticleName_LostKeyboardFocus"
+                                         PreviewKeyDown="ArticleName_PreviewKeyDown"/>
+
+                                <!-- Category: only written back when the user makes a selection -->
+                                <ComboBox Grid.Column="1" Margin="8,0,0,0"
+                                          ItemsSource="{Binding DataContext.Categories, RelativeSource={RelativeSource AncestorType=Window}}"
+                                          DisplayMemberPath="Name" SelectedValuePath="Name"
+                                          SelectedValue="{Binding Category, Mode=OneWay}"
+                                          SelectionChanged="ArticleCategory_SelectionChanged"/>
+
+                                <Button Grid.Column="2" Margin="6,0,0,0" Style="{StaticResource DangerGhostButton}"
+                                        Content="✕" ToolTip="{DynamicResource S_DeleteArticleTooltip}"
+                                        Command="{Binding DataContext.DeleteArticleCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                        CommandParameter="{Binding}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <TextBlock Text="{DynamicResource S_NoArticlesFound}" HorizontalAlignment="Center" VerticalAlignment="Top"
+                           Margin="0,34,0,0" IsHitTestVisible="False" Foreground="{DynamicResource DimBrush}">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding FilteredArticles.Count}" Value="0">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
+        </Border>
+
+        <!-- ============================================================ Footer -->
+        <Grid Grid.Row="8" Margin="0,16,0,0">
+            <Button Style="{StaticResource LinkButton}" HorizontalAlignment="Left" VerticalAlignment="Center"
+                    Content="{DynamicResource S_AddDefaultArticles}"
+                    ToolTip="{DynamicResource S_AddDefaultArticlesTooltip}"
+                    Command="{Binding AddDefaultArticlesCommand}"/>
+            <Button Style="{StaticResource PrimaryButton}" HorizontalAlignment="Right" MinWidth="100"
+                    Content="{DynamicResource S_Done}" Click="Close_Click"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,19 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Dark theme (colors carried over from the HTML version) -->
+    <SolidColorBrush x:Key="BgBrush" Color="#0F1115"/>
+    <SolidColorBrush x:Key="SurfaceBrush" Color="#171A21"/>
+    <SolidColorBrush x:Key="Surface2Brush" Color="#1E222B"/>
+    <SolidColorBrush x:Key="LineBrush" Color="#2A2F3A"/>
+    <SolidColorBrush x:Key="TextBrush" Color="#E8EAED"/>
+    <SolidColorBrush x:Key="DimBrush" Color="#9AA1AC"/>
+    <SolidColorBrush x:Key="AccentBrush" Color="#A78BFA"/>
+    <!-- Surface behind a selection or a total: a deep tint of the accent, dark enough
+         that the violet sitting on top of it stays the brightest thing on the panel. -->
+    <SolidColorBrush x:Key="AccentSoftBrush" Color="#322A5C"/>
+    <SolidColorBrush x:Key="OnAccentBrush" Color="#1B1235"/>
+    <SolidColorBrush x:Key="DangerBrush" Color="#F87171"/>
+    <SolidColorBrush x:Key="DangerSoftBrush" Color="#7F1D1D"/>
+    <SolidColorBrush x:Key="WarnBrush" Color="#F5B942"/>
+    <SolidColorBrush x:Key="HoverBrush" Color="#14FFFFFF"/>
+</ResourceDictionary>

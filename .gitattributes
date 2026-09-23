@@ -1,0 +1,17 @@
+# Normalise line endings: LF in the repository, native on checkout.
+* text=auto
+
+# Explicit types for the project's own files.
+*.cs       text diff=csharp
+*.xaml     text
+*.csproj   text
+*.config   text
+*.json     text
+*.md       text
+
+# Binary files - never convert these.
+*.ico      binary
+*.exe      binary
+*.pdf      binary
+*.png      binary
+*.jpg      binary

@@ -1,0 +1,244 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+    <!-- German UI text. Every key here must also exist in English.xaml. -->
+
+    <!-- Window titles -->
+    <sys:String x:Key="S_AppTitle">Tally</sys:String>
+    <sys:String x:Key="S_ArticleEditorTitle">Artikel &amp; Kategorien</sys:String>
+    <sys:String x:Key="S_BackupsTitle">Backups</sys:String>
+
+    <!-- Sidebar -->
+    <sys:String x:Key="S_BrandLine1">Tally</sys:String>
+    <sys:String x:Key="S_BrandLine2">Party-Getränke</sys:String>
+    <sys:String x:Key="S_ToggleThemeTooltip">Zwischen hellem und dunklem Design wechseln</sys:String>
+    <sys:String x:Key="S_ToggleLanguageTooltip">Sprache wechseln / Switch language</sys:String>
+    <sys:String x:Key="S_NewParty">Neue Party</sys:String>
+    <sys:String x:Key="S_NamePlaceholder">Name der Party</sys:String>
+    <sys:String x:Key="S_DateEmptyToday">Datum (leer = heute)</sys:String>
+    <sys:String x:Key="S_AddParty">+ Neue Party</sys:String>
+    <sys:String x:Key="S_Parties">Partys</sys:String>
+    <sys:String x:Key="S_DeletePartyTooltip">Party löschen</sys:String>
+    <sys:String x:Key="S_NoPartiesYet">Noch keine Partys.</sys:String>
+    <sys:String x:Key="S_ManageArticles">Artikel &amp; Kategorien verwalten …</sys:String>
+    <sys:String x:Key="S_Save">Speichern</sys:String>
+    <sys:String x:Key="S_RetrySave">Erneut versuchen</sys:String>
+    <sys:String x:Key="S_OpenFolder">Ordner öffnen</sys:String>
+    <sys:String x:Key="S_OpenFolderTooltip">Öffnet den Ordner mit den Daten und Backups im Explorer</sys:String>
+    <sys:String x:Key="S_ChangeFolder">Ändern …</sys:String>
+    <sys:String x:Key="S_ChangeFolderTooltip">Speicherort ändern (z. B. auf einen USB-Stick oder in die Cloud)</sys:String>
+    <sys:String x:Key="S_BackupNow">Backup jetzt</sys:String>
+    <sys:String x:Key="S_BackupsEllipsis">Backups …</sys:String>
+    <sys:String x:Key="S_BackupsTooltip">Frühere Stände ansehen und wiederherstellen</sys:String>
+    <sys:String x:Key="S_Export">Exportieren</sys:String>
+    <sys:String x:Key="S_ExportTooltip">Alle Daten als JSON-Datei speichern</sys:String>
+    <sys:String x:Key="S_Import">Importieren</sys:String>
+    <sys:String x:Key="S_ImportTooltip">Daten aus einer JSON-Datei laden (auch aus der alten HTML-Version)</sys:String>
+
+    <!-- Main area -->
+    <sys:String x:Key="S_NoPartySelected">Keine Party ausgewählt</sys:String>
+    <sys:String x:Key="S_NoPartySelectedHint">Lege links eine neue Party an oder wähle eine bestehende aus.</sys:String>
+    <sys:String x:Key="S_RenameTooltip">Zum Umbenennen anklicken und tippen</sys:String>
+    <sys:String x:Key="S_Print">Drucken / PDF</sys:String>
+    <sys:String x:Key="S_PrintTooltip">Rechnung drucken – für eine PDF-Datei den Drucker „Microsoft Print to PDF“ wählen</sys:String>
+    <sys:String x:Key="S_CancelEdit">Bearbeiten abbrechen (Esc)</sys:String>
+    <sys:String x:Key="S_AddDrink">Getränk hinzufügen</sys:String>
+    <sys:String x:Key="S_EditItem">Position bearbeiten</sys:String>
+    <sys:String x:Key="S_Drink">Getränk</sys:String>
+    <sys:String x:Key="S_Category">Kategorie</sys:String>
+    <sys:String x:Key="S_StoreOptional">Einkaufsort (optional)</sys:String>
+    <sys:String x:Key="S_StoreColumn">Einkaufsort</sys:String>
+    <sys:String x:Key="S_Quantity">Menge</sys:String>
+    <sys:String x:Key="S_UnitPriceEuro">Einzelpreis €</sys:String>
+    <sys:String x:Key="S_TotalPriceEuro">Gesamtpreis €</sys:String>
+    <sys:String x:Key="S_UnitPriceColumn">Einzelpreis</sys:String>
+    <sys:String x:Key="S_TotalPriceColumn">Gesamtpreis</sys:String>
+    <sys:String x:Key="S_EditTooltip">Bearbeiten</sys:String>
+    <sys:String x:Key="S_DeleteTooltip">Löschen</sys:String>
+    <sys:String x:Key="S_NoItemsYet">Noch keine Positionen – trage oben das erste Getränk ein.</sys:String>
+    <sys:String x:Key="S_GrandTotal">Gesamtsumme</sys:String>
+    <sys:String x:Key="S_DrinkPlaceholder">z. B. Granini …</sys:String>
+    <sys:String x:Key="S_StorePlaceholder">z. B. Getränkemarkt Müller</sys:String>
+    <sys:String x:Key="S_AddButton">+ Hinzufügen</sys:String>
+
+    <!-- Guests -->
+    <sys:String x:Key="S_TabDrinks">Getränke</sys:String>
+    <sys:String x:Key="S_TabGuests">Gäste</sys:String>
+    <sys:String x:Key="S_AddGuest">Gast hinzufügen</sys:String>
+    <sys:String x:Key="S_AddGuestButton">+ Hinzufügen</sys:String>
+    <sys:String x:Key="S_GuestName">Gast</sys:String>
+    <sys:String x:Key="S_GuestNamePlaceholder">z. B. Lisa</sys:String>
+    <sys:String x:Key="S_OwesEuro">Betrag €</sys:String>
+    <sys:String x:Key="S_OwesColumn">Betrag</sys:String>
+    <sys:String x:Key="S_PaidColumn">Bezahlt</sys:String>
+    <sys:String x:Key="S_OpenColumn">Offen</sys:String>
+    <sys:String x:Key="S_SettleGuestTooltip">Als vollständig bezahlt markieren</sys:String>
+    <sys:String x:Key="S_DeleteGuestTooltip">Gast löschen</sys:String>
+    <sys:String x:Key="S_NoGuestsYet">Noch keine Gäste – trage oben den ersten Gast ein.</sys:String>
+    <sys:String x:Key="S_SpentOnDrinks">Einkauf</sys:String>
+    <sys:String x:Key="S_Collected">Eingenommen</sys:String>
+    <sys:String x:Key="S_StillOpen">Noch offen</sys:String>
+    <sys:String x:Key="S_Result">Ergebnis</sys:String>
+    <sys:String x:Key="S_ResultFormula">Eingenommen − Einkauf</sys:String>
+    <sys:String x:Key="S_NotCoveredYet">Einkauf noch nicht gedeckt</sys:String>
+    <sys:String x:Key="S_PrintGuests">Gästeliste drucken</sys:String>
+    <sys:String x:Key="S_PrintGuestsTooltip">Gästeliste drucken – für eine PDF-Datei den Drucker „Microsoft Print to PDF“ wählen</sys:String>
+
+    <!-- Printout (the rest of the printed text reuses the column labels above, in capitals) -->
+    <sys:String x:Key="S_PrintInvoiceHeading">TALLY · GETRÄNKE-RECHNUNG</sys:String>
+    <sys:String x:Key="S_PrintGuestsHeading">TALLY · GÄSTELISTE</sys:String>
+    <sys:String x:Key="S_PrintCreatedOn">ERSTELLT AM {0}</sys:String>
+    <sys:String x:Key="S_PrintDateLine">Datum: {0}</sys:String>
+    <sys:String x:Key="S_PrintNoItems">Keine Positionen erfasst.</sys:String>
+    <sys:String x:Key="S_PrintNoGuests">Keine Gäste erfasst.</sys:String>
+    <sys:String x:Key="S_PrintStatusColumn">Status</sys:String>
+    <sys:String x:Key="S_PrintStatusPaid">bezahlt</sys:String>
+    <sys:String x:Key="S_PrintStatusOpen">offen</sys:String>
+    <sys:String x:Key="S_PrintJobInvoice">Tally – Rechnung {0}</sys:String>
+    <sys:String x:Key="S_PrintJobGuests">Tally – Gästeliste {0}</sys:String>
+
+    <!-- Article editor -->
+    <sys:String x:Key="S_ArticleEditorSubtitle">Diese Listen liefern die Vorschläge beim Eintragen von Getränken. Änderungen werden automatisch gespeichert.</sys:String>
+    <sys:String x:Key="S_Categories">Kategorien</sys:String>
+    <sys:String x:Key="S_DeleteCategoryTooltip">Kategorie löschen</sys:String>
+    <sys:String x:Key="S_NewCategoryPlaceholder">Neue Kategorie, z. B. Snacks</sys:String>
+    <sys:String x:Key="S_AddCategory">+ Neue Kategorie</sys:String>
+    <sys:String x:Key="S_Articles">Artikel</sys:String>
+    <sys:String x:Key="S_ArticleCountText">{0} von {1} Artikeln</sys:String>
+    <sys:String x:Key="S_SearchArticlesPlaceholder">Artikel suchen …</sys:String>
+    <sys:String x:Key="S_NewArticlePlaceholder">Neuer Artikel</sys:String>
+    <sys:String x:Key="S_DeleteArticleTooltip">Artikel löschen</sys:String>
+    <sys:String x:Key="S_NoArticlesFound">Keine Artikel gefunden.</sys:String>
+    <sys:String x:Key="S_AddDefaultArticles">Standardartikel ergänzen</sys:String>
+    <sys:String x:Key="S_AddDefaultArticlesTooltip">Fehlende Artikel aus der mitgelieferten Liste hinzufügen – vorhandene bleiben unverändert</sys:String>
+    <sys:String x:Key="S_Done">Fertig</sys:String>
+
+    <!-- Date field -->
+    <sys:String x:Key="S_OpenCalendarTooltip">Kalender öffnen (F4)</sys:String>
+    <sys:String x:Key="S_Mon">Mo</sys:String>
+    <sys:String x:Key="S_Tue">Di</sys:String>
+    <sys:String x:Key="S_Wed">Mi</sys:String>
+    <sys:String x:Key="S_Thu">Do</sys:String>
+    <sys:String x:Key="S_Fri">Fr</sys:String>
+    <sys:String x:Key="S_Sat">Sa</sys:String>
+    <sys:String x:Key="S_Sun">So</sys:String>
+    <sys:String x:Key="S_Today">Heute</sys:String>
+
+    <!-- Backups window -->
+    <sys:String x:Key="S_RestoreBackups">Backups wiederherstellen</sys:String>
+    <sys:String x:Key="S_RestoreBackupsHint">Wähle ein Backup und klicke auf „Wiederherstellen“. Dein aktueller Stand wird vorher automatisch als Backup gesichert, du kannst also nichts verlieren.</sys:String>
+    <sys:String x:Key="S_NoBackupsYet">Noch keine Backups vorhanden.</sys:String>
+    <sys:String x:Key="S_Close">Schließen</sys:String>
+    <sys:String x:Key="S_Restore">Wiederherstellen</sys:String>
+
+    <!-- Dynamic status / dialog text (used from C# via LocalizationManager.T) -->
+    <sys:String x:Key="S_AutoSaved">Automatisch gespeichert</sys:String>
+    <sys:String x:Key="S_AutoSavedAt">Automatisch gespeichert · {0}</sys:String>
+    <sys:String x:Key="S_SavingChanges">Änderungen werden gespeichert …</sys:String>
+    <sys:String x:Key="S_Saving">Speichert …</sys:String>
+    <sys:String x:Key="S_SaveFailedRetrying">Speichern fehlgeschlagen – neuer Versuch läuft.
+{0}</sys:String>
+
+    <sys:String x:Key="S_DeleteCategoryTitle">Kategorie löschen</sys:String>
+    <sys:String x:Key="S_DeleteCategoryMsg">Die Kategorie "{0}" wird noch von {1} Artikel(n) und {2} Position(en) verwendet.
+
+Sie behalten den Kategorienamen, die Kategorie steht aber nicht mehr zur Auswahl. Trotzdem löschen?</sys:String>
+    <sys:String x:Key="S_DefaultArticlesTitle">Standardartikel</sys:String>
+    <sys:String x:Key="S_DefaultArticlesAllPresent">Alle Standardartikel sind schon in deiner Liste.</sys:String>
+    <sys:String x:Key="S_DefaultArticlesAdded">{0} Standardartikel wurden ergänzt.</sys:String>
+
+    <sys:String x:Key="S_DeletePartyTitle">Party löschen</sys:String>
+    <sys:String x:Key="S_DeletePartyMsg">Party "{0}" wirklich löschen? Alle Einträge gehen verloren.
+
+(Vorher wird automatisch ein Backup angelegt.)</sys:String>
+    <sys:String x:Key="S_DeleteGuestTitle">Gast löschen</sys:String>
+    <sys:String x:Key="S_DeleteGuestMsg">Gast "{0}" wirklich löschen?</sys:String>
+    <sys:String x:Key="S_SaveFailedTitle">Speichern fehlgeschlagen</sys:String>
+    <sys:String x:Key="S_SaveFailedOnExitMsg">Deine Daten konnten nicht gespeichert werden:
+{0}
+
+Trotzdem beenden? Nicht gespeicherte Änderungen gehen dann verloren.</sys:String>
+    <sys:String x:Key="S_QuitAnyway">Trotzdem beenden</sys:String>
+    <sys:String x:Key="S_BackToProgram">Zurück zum Programm</sys:String>
+
+    <sys:String x:Key="S_BackupCreatedTitle">Backup erstellt</sys:String>
+    <sys:String x:Key="S_BackupCreatedMsg">Das Backup wurde gespeichert:
+{0}</sys:String>
+    <sys:String x:Key="S_BackupFailedTitle">Backup fehlgeschlagen</sys:String>
+    <sys:String x:Key="S_BackupNotReadableTitle">Backup nicht lesbar</sys:String>
+    <sys:String x:Key="S_BackupNotReadableMsg">Dieses Backup lässt sich nicht laden:
+{0}</sys:String>
+    <sys:String x:Key="S_RestoreBackupTitle">Backup wiederherstellen</sys:String>
+    <sys:String x:Key="S_RestoreBackupMsg">Aktuelle Daten durch das Backup vom {0} ersetzen?
+
+Vorher wird der aktuelle Stand automatisch als Backup gesichert.</sys:String>
+
+    <sys:String x:Key="S_ExportDataTitle">Daten exportieren</sys:String>
+    <sys:String x:Key="S_ExportedTitle">Exportiert</sys:String>
+    <sys:String x:Key="S_ExportedMsg">Die Daten wurden gespeichert:
+{0}</sys:String>
+    <sys:String x:Key="S_ExportFailedTitle">Export fehlgeschlagen</sys:String>
+    <sys:String x:Key="S_ImportDataTitle">Daten importieren</sys:String>
+    <sys:String x:Key="S_ImportFailedTitle">Import fehlgeschlagen</sys:String>
+    <sys:String x:Key="S_ImportFailedMsg">Die Datei konnte nicht gelesen werden oder ist ungültig:
+{0}</sys:String>
+    <sys:String x:Key="S_ImportConfirmMsg">Aktuelle Daten durch den Inhalt dieser Datei ersetzen?
+
+Die Datei enthält {0} Party(s).
+Vorher wird der aktuelle Stand automatisch als Backup gesichert.</sys:String>
+    <sys:String x:Key="S_Replace">Ersetzen</sys:String>
+    <sys:String x:Key="S_Cancel">Abbrechen</sys:String>
+    <sys:String x:Key="S_Delete">Löschen</sys:String>
+
+    <sys:String x:Key="S_ChooseNewFolderTitle">Neuen Speicherordner wählen</sys:String>
+    <sys:String x:Key="S_FolderNotUsableTitle">Ordner nicht nutzbar</sys:String>
+    <sys:String x:Key="S_FolderNotUsableMsg">In diesen Ordner kann nicht geschrieben werden:
+{0}</sys:String>
+    <sys:String x:Key="S_DataFileFoundTitle">Datendatei gefunden</sys:String>
+    <sys:String x:Key="S_DataFileFoundMsg">Im Ordner
+{0}
+liegt schon eine Datendatei.
+
+Ja: diese Datei laden (deine aktuellen Daten bleiben im alten Ordner erhalten).
+Nein: deine aktuellen Daten dorthin kopieren und die vorhandene Datei ersetzen (sie wird vorher als Backup gesichert).</sys:String>
+    <sys:String x:Key="S_LoadThisFile">Diese Datei laden</sys:String>
+    <sys:String x:Key="S_CopyCurrentData">Aktuelle Daten kopieren</sys:String>
+    <sys:String x:Key="S_FileNotReadableTitle">Datei nicht lesbar</sys:String>
+    <sys:String x:Key="S_FileNotReadableMsg">Die vorhandene Datendatei konnte nicht gelesen werden:
+{0}</sys:String>
+    <sys:String x:Key="S_NoticeTitle">Hinweis</sys:String>
+
+    <!-- DataStore load notices -->
+    <sys:String x:Key="S_DataFileCorruptedBackupLoaded">Die Datendatei war beschädigt. Das Backup vom {0} wurde geladen.
+
+Die beschädigte Datei wurde als "{1}" im Datenordner aufgehoben.</sys:String>
+    <sys:String x:Key="S_DataFileCorruptedNoBackup">Die Datendatei war beschädigt und es gibt kein brauchbares Backup. Es wird mit leerer Liste gestartet.
+
+Die beschädigte Datei wurde als "{0}" im Datenordner aufgehoben.</sys:String>
+    <sys:String x:Key="S_NoDataFileBackupLoaded">Keine Datendatei gefunden. Das Backup vom {0} wurde geladen.</sys:String>
+
+    <!-- Item count / party count -->
+    <sys:String x:Key="S_ItemCountSingular">{0} Position</sys:String>
+    <sys:String x:Key="S_ItemCountPlural">{0} Positionen</sys:String>
+    <sys:String x:Key="S_GuestCountSingular">{0} Gast</sys:String>
+    <sys:String x:Key="S_GuestCountPlural">{0} Gäste</sys:String>
+
+    <!-- Backup reasons -->
+    <sys:String x:Key="S_ReasonAuto">Automatisch</sys:String>
+    <sys:String x:Key="S_ReasonStart">Beim Start</sys:String>
+    <sys:String x:Key="S_ReasonEnd">Beim Beenden</sys:String>
+    <sys:String x:Key="S_ReasonManual">Manuell</sys:String>
+    <sys:String x:Key="S_ReasonBeforeImport">Vor Import</sys:String>
+    <sys:String x:Key="S_ReasonBeforeRestore">Vor Wiederherstellung</sys:String>
+    <sys:String x:Key="S_ReasonBeforeFolderChange">Vor Ordnerwechsel</sys:String>
+    <sys:String x:Key="S_ReasonBeforeDelete">Vor Löschen</sys:String>
+    <sys:String x:Key="S_ReasonBackup">Backup</sys:String>
+
+    <!-- File-format errors -->
+    <sys:String x:Key="S_ErrorFileHasNoData">Die Datei enthält keine Daten.</sys:String>
+    <sys:String x:Key="S_ErrorInvalidFileMissingEvents">Ungültige Datei: Feld "events" fehlt.</sys:String>
+
+    <!-- Category without a name -->
+    <sys:String x:Key="S_NoCategory">Ohne Kategorie</sys:String>
+    <sys:String x:Key="S_UnnamedParty">Unbenannte Party</sys:String>
+</ResourceDictionary>
